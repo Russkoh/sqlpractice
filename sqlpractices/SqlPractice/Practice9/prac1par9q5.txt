@@ -1,0 +1,18 @@
+SQL> drop table emp
+  2  drop table emp;
+drop table emp
+*
+ERROR at line 2:
+ORA-00933: SQL command not properly ended 
+
+
+SQL> drop table emp;
+
+Table dropped.
+
+SQL> describe emp;
+ERROR:
+ORA-04043: object emp does not exist 
+
+
+SQL> spool off;

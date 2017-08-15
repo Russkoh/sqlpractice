@@ -1,0 +1,70 @@
+SQL> SELECT last_name, salary FROM employees WHERE salary BETWEEN 5000 AND 12000;
+
+LAST_NAME                     SALARY                                            
+------------------------- ----------                                            
+Hunold                          9000                                            
+Ernst                           6000                                            
+Faviet                          9000                                            
+Chen                            8200                                            
+Sciarra                         7700                                            
+Urman                           7800                                            
+Popp                            6900                                            
+Raphaely                       11000                                            
+Weiss                           8000                                            
+Fripp                           8200                                            
+Kaufling                        7900                                            
+
+LAST_NAME                     SALARY                                            
+------------------------- ----------                                            
+Vollman                         6500                                            
+Mourgos                         5800                                            
+Errazuriz                      12000                                            
+Cambrault                      11000                                            
+Zlotkey                        10500                                            
+Tucker                         10000                                            
+Bernstein                       9500                                            
+Hall                            9000                                            
+Olsen                           8000                                            
+Cambrault                       7500                                            
+Tuvault                         7000                                            
+
+LAST_NAME                     SALARY                                            
+------------------------- ----------                                            
+King                           10000                                            
+Sully                           9500                                            
+McEwen                          9000                                            
+Smith                           8000                                            
+Doran                           7500                                            
+Sewall                          7000                                            
+Vishney                        10500                                            
+Greene                          9500                                            
+Marvins                         7200                                            
+Lee                             6800                                            
+Ande                            6400                                            
+
+LAST_NAME                     SALARY                                            
+------------------------- ----------                                            
+Banda                           6200                                            
+Ozer                           11500                                            
+Bloom                          10000                                            
+Fox                             9600                                            
+Smith                           7400                                            
+Bates                           7300                                            
+Kumar                           6100                                            
+Abel                           11000                                            
+Hutton                          8800                                            
+Taylor                          8600                                            
+Livingston                      8400                                            
+
+LAST_NAME                     SALARY                                            
+------------------------- ----------                                            
+Grant                           7000                                            
+Johnson                         6200                                            
+Fay                             6000                                            
+Mavris                          6500                                            
+Baer                           10000                                            
+Gietz                           8300                                            
+
+50 rows selected.
+
+SQL> spool off;

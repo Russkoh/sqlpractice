@@ -1,0 +1,106 @@
+SQL> SELECT last_name, department_id, department_name FROM employees;
+SELECT last_name, department_id, department_name FROM employees
+                                 *
+ERROR at line 1:
+ORA-00904: "DEPARTMENT_NAME": invalid identifier 
+
+
+SQL> DESCRIBE employees;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPLOYEE_ID                               NOT NULL NUMBER(6)
+ FIRST_NAME                                         VARCHAR2(20)
+ LAST_NAME                                 NOT NULL VARCHAR2(25)
+ EMAIL                                     NOT NULL VARCHAR2(25)
+ PHONE_NUMBER                                       VARCHAR2(20)
+ HIRE_DATE                                 NOT NULL DATE
+ JOB_ID                                    NOT NULL VARCHAR2(10)
+ SALARY                                             NUMBER(8,2)
+ COMMISSION_PCT                                     NUMBER(2,2)
+ MANAGER_ID                                         NUMBER(6)
+ DEPARTMENT_ID                                      NUMBER(4)
+
+SQL> SELECT DISTINCT(job_id) from employees;
+
+JOB_ID                                                                          
+----------                                                                      
+AC_ACCOUNT                                                                      
+AC_MGR                                                                          
+AD_ASST                                                                         
+AD_PRES                                                                         
+AD_VP                                                                           
+FI_ACCOUNT                                                                      
+FI_MGR                                                                          
+HR_REP                                                                          
+IT_PROG                                                                         
+MK_MAN                                                                          
+MK_REP                                                                          
+
+JOB_ID                                                                          
+----------                                                                      
+PR_REP                                                                          
+PU_CLERK                                                                        
+PU_MAN                                                                          
+SA_MAN                                                                          
+SA_REP                                                                          
+SH_CLERK                                                                        
+ST_CLERK                                                                        
+ST_MAN                                                                          
+
+19 rows selected.
+
+SQL> describe departments;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DEPARTMENT_ID                             NOT NULL NUMBER(4)
+ DEPARTMENT_NAME                           NOT NULL VARCHAR2(30)
+ MANAGER_ID                                         NUMBER(6)
+ LOCATION_ID                                        NUMBER(4)
+
+
+SQL> SELECT last_name, department_id, department_name FROM employees NATURAL JOIN departments;
+
+LAST_NAME                 DEPARTMENT_ID DEPARTMENT_NAME                         
+------------------------- ------------- ------------------------------          
+Kochhar                              90 Executive                               
+De Haan                              90 Executive                               
+Ernst                                60 IT                                      
+Austin                               60 IT                                      
+Pataballa                            60 IT                                      
+Lorentz                              60 IT                                      
+Faviet                              100 Finance                                 
+Chen                                100 Finance                                 
+Sciarra                             100 Finance                                 
+Urman                               100 Finance                                 
+Popp                                100 Finance                                 
+
+LAST_NAME                 DEPARTMENT_ID DEPARTMENT_NAME                         
+------------------------- ------------- ------------------------------          
+Khoo                                 30 Purchasing                              
+Baida                                30 Purchasing                              
+Tobias                               30 Purchasing                              
+Himuro                               30 Purchasing                              
+Colmenares                           30 Purchasing                              
+Bissot                               50 Shipping                                
+Atkinson                             50 Shipping                                
+Marlow                               50 Shipping                                
+Olson                                50 Shipping                                
+Tucker                               80 Sales                                   
+Bernstein                            80 Sales                                   
+
+LAST_NAME                 DEPARTMENT_ID DEPARTMENT_NAME                         
+------------------------- ------------- ------------------------------          
+Hall                                 80 Sales                                   
+Olsen                                80 Sales                                   
+Cambrault                            80 Sales                                   
+Tuvault                              80 Sales                                   
+Sarchand                             50 Shipping                                
+Bull                                 50 Shipping                                
+Dellinger                            50 Shipping                                
+Cabrio                               50 Shipping                                
+Fay                                  20 Marketing                               
+Gietz                               110 Accounting                              
+
+32 rows selected.
+
+SQL> spoo off;

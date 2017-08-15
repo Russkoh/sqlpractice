@@ -1,0 +1,57 @@
+SQL> describe departments;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DEPARTMENT_ID                             NOT NULL NUMBER(4)
+ DEPARTMENT_NAME                           NOT NULL VARCHAR2(30)
+ MANAGER_ID                                         NUMBER(6)
+ LOCATION_ID                                        NUMBER(4)
+
+SQL> select department_name from departments;
+
+DEPARTMENT_NAME                                                                 
+------------------------------                                                  
+Administration                                                                  
+Marketing                                                                       
+Purchasing                                                                      
+Human Resources                                                                 
+Shipping                                                                        
+IT                                                                              
+Public Relations                                                                
+Sales                                                                           
+Executive                                                                       
+Finance                                                                         
+Accounting                                                                      
+
+DEPARTMENT_NAME                                                                 
+------------------------------                                                  
+Treasury                                                                        
+Corporate Tax                                                                   
+Control And Credit                                                              
+Shareholder Services                                                            
+Benefits                                                                        
+Manufacturing                                                                   
+Construction                                                                    
+Contracting                                                                     
+Operations                                                                      
+IT Support                                                                      
+NOC                                                                             
+
+DEPARTMENT_NAME                                                                 
+------------------------------                                                  
+IT Helpdesk                                                                     
+Government Sales                                                                
+Retail Sales                                                                    
+Recruiting                                                                      
+Payroll                                                                         
+
+27 rows selected.
+
+SQL> select department_id, last_name, job_id from employees where department_id in (select department_id from departments where department_name = 'Executive');
+
+DEPARTMENT_ID LAST_NAME                 JOB_ID                                  
+------------- ------------------------- ----------                              
+           90 King                      AD_PRES                                 
+           90 Kochhar                   AD_VP                                   
+           90 De Haan                   AD_VP                                   
+
+SQL> spool off;

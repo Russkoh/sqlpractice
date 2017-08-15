@@ -1,0 +1,25 @@
+SQL> insert into my_employee (id, last_name, first_name, user_id, salary) values(2, 'Dancs', 'Betty', 'bdancs', 860);
+
+1 row created.
+
+SQL> select * from my_employees;
+select * from my_employees
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> select * from my_employee;
+
+        ID LAST_NAME                 FIRST_NAME                                 
+---------- ------------------------- -------------------------                  
+USER_ID                       SALARY                                            
+------------------------- ----------                                            
+         1 Patel                     Ralph                                      
+rpatel                           895                                            
+                                                                                
+         2 Dancs                     Betty                                      
+bdancs                           860                                            
+                                                                                
+
+SQL> spool off;

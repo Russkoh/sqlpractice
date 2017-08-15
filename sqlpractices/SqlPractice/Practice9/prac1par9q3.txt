@@ -1,0 +1,22 @@
+SQL> create table emp (id number(7), last_name varchar2(25), first_name varchar2(25) dept_id number(7) constraint emp_dept_id references dept(id));
+create table emp (id number(7), last_name varchar2(25), first_name varchar2(25) dept_id number(7) constraint emp_dept_id references dept(id))
+                                                                                *
+ERROR at line 1:
+ORA-00907: missing right parenthesis 
+
+
+SQL> create table emp (id number(7), last_name varchar2(25), first_name varchar2(25), dept_id number(7) constraint emp_dept_id references dept(id));
+
+Table created.
+
+SQL> decribe emp
+SP2-0734: unknown command beginning "decribe em..." - rest of line ignored.
+SQL> describe emp;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID                                                 NUMBER(7)
+ LAST_NAME                                          VARCHAR2(25)
+ FIRST_NAME                                         VARCHAR2(25)
+ DEPT_ID                                            NUMBER(7)
+
+SQL> spool off;

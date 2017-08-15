@@ -1,0 +1,5 @@
+SQL> create table my_employee (id int constraint my_employee_id not null, last_name varchar2(25), first_name varchar2(25), user_id varchar(25), salary int);
+
+Table created.
+
+SQL> spool off;

@@ -1,0 +1,213 @@
+SQL> UNDEFINE entered_name SELECT last_name, hire_date FROM  employees WHERE department_id = (SELECT  department_id FROM employees WHERE last_name = '&&entered_name') AND last_name <> '&Enter_Name';
+Enter value for entered_name: Zlotkey
+Enter value for enter_name: Zlotkey
+SQL> UNDEFINE entered_name SELECT last_name, hire_date FROM  employees WHERE department_id = (SELECT  department_id FROM employees WHERE last_name = '&&entered_name') AND last_name <> '&entered_Name';
+Enter value for entered_name: Zlotkey
+SQL> select last_name from employees;
+
+LAST_NAME                                                                       
+-------------------------                                                       
+Abel                                                                            
+Ande                                                                            
+Atkinson                                                                        
+Austin                                                                          
+Baer                                                                            
+Baida                                                                           
+Banda                                                                           
+Bates                                                                           
+Bell                                                                            
+Bernstein                                                                       
+Bissot                                                                          
+
+LAST_NAME                                                                       
+-------------------------                                                       
+Bloom                                                                           
+Bull                                                                            
+Cabrio                                                                          
+Cambrault                                                                       
+Cambrault                                                                       
+Chen                                                                            
+Chung                                                                           
+Colmenares                                                                      
+Davies                                                                          
+De Haan                                                                         
+Dellinger                                                                       
+
+LAST_NAME                                                                       
+-------------------------                                                       
+Dilly                                                                           
+Doran                                                                           
+Ernst                                                                           
+Errazuriz                                                                       
+Everett                                                                         
+Faviet                                                                          
+Fay                                                                             
+Feeney                                                                          
+Fleaur                                                                          
+Fox                                                                             
+Fripp                                                                           
+
+LAST_NAME                                                                       
+-------------------------                                                       
+Gates                                                                           
+Gee                                                                             
+Geoni                                                                           
+Gietz                                                                           
+Grant                                                                           
+Grant                                                                           
+Greenberg                                                                       
+Greene                                                                          
+Hall                                                                            
+Hartstein                                                                       
+Higgins                                                                         
+
+LAST_NAME                                                                       
+-------------------------                                                       
+Himuro                                                                          
+Hunold                                                                          
+Hutton                                                                          
+Johnson                                                                         
+Jones                                                                           
+Kaufling                                                                        
+Khoo                                                                            
+King                                                                            
+King                                                                            
+Kochhar                                                                         
+Kumar                                                                           
+
+LAST_NAME                                                                       
+-------------------------                                                       
+Ladwig                                                                          
+Landry                                                                          
+Lee                                                                             
+Livingston                                                                      
+Lorentz                                                                         
+Mallin                                                                          
+Markle                                                                          
+Marlow                                                                          
+Marvins                                                                         
+Matos                                                                           
+Mavris                                                                          
+
+LAST_NAME                                                                       
+-------------------------                                                       
+McCain                                                                          
+McEwen                                                                          
+Mikkilineni                                                                     
+Mourgos                                                                         
+Nayer                                                                           
+OConnell                                                                        
+Olsen                                                                           
+Olson                                                                           
+Ozer                                                                            
+Partners                                                                        
+Pataballa                                                                       
+
+LAST_NAME                                                                       
+-------------------------                                                       
+Patel                                                                           
+Perkins                                                                         
+Philtanker                                                                      
+Popp                                                                            
+Rajs                                                                            
+Raphaely                                                                        
+Rogers                                                                          
+Russell                                                                         
+Sarchand                                                                        
+Sciarra                                                                         
+Seo                                                                             
+
+LAST_NAME                                                                       
+-------------------------                                                       
+Sewall                                                                          
+Smith                                                                           
+Smith                                                                           
+Stiles                                                                          
+Sullivan                                                                        
+Sully                                                                           
+Taylor                                                                          
+Taylor                                                                          
+Tobias                                                                          
+Tucker                                                                          
+Tuvault                                                                         
+
+LAST_NAME                                                                       
+-------------------------                                                       
+Urman                                                                           
+Vargas                                                                          
+Vishney                                                                         
+Vollman                                                                         
+Walsh                                                                           
+Weiss                                                                           
+Whalen                                                                          
+Zlotkey                                                                         
+
+107 rows selected.
+
+SQL> UNDEFINE entered_name SELECT last_name, hire_date FROM  employees WHERE department_id = (SELECT  department_id FROM employees WHERE last_name = '&&entered_name') AND last_name <> '&entered_Name';
+Enter value for entered_name: Whalen
+SQL> UNDEFINE entered_name SELECT last_name, hire_date FROM  employees WHERE department_id = (SELECT  department_id FROM employees WHERE last_name = '&&entered_name') AND last_name <> '&&entered_Name';
+Enter value for entered_name: Whalen
+SQL> select last_name from employees where last_name = '&entered_name';
+Enter value for entered_name: Zlotkey
+old   1: select last_name from employees where last_name = '&entered_name'
+new   1: select last_name from employees where last_name = 'Zlotkey'
+
+LAST_NAME                                                                       
+-------------------------                                                       
+Zlotkey                                                                         
+
+SQL> select last_name, hire_date from employees where department_id = (select department_id from employees where last_name = '&entered_name');
+Enter value for entered_name: Zlotkey
+old   1: select last_name, hire_date from employees where department_id = (select department_id from employees where last_name = '&entered_name')
+new   1: select last_name, hire_date from employees where department_id = (select department_id from employees where last_name = 'Zlotkey')
+
+LAST_NAME                 HIRE_DATE                                             
+------------------------- ---------                                             
+Russell                   01-OCT-04                                             
+Partners                  05-JAN-05                                             
+Errazuriz                 10-MAR-05                                             
+Cambrault                 15-OCT-07                                             
+Zlotkey                   29-JAN-08                                             
+Tucker                    30-JAN-05                                             
+Bernstein                 24-MAR-05                                             
+Hall                      20-AUG-05                                             
+Olsen                     30-MAR-06                                             
+Cambrault                 09-DEC-06                                             
+Tuvault                   23-NOV-07                                             
+
+LAST_NAME                 HIRE_DATE                                             
+------------------------- ---------                                             
+King                      30-JAN-04                                             
+Sully                     04-MAR-04                                             
+McEwen                    01-AUG-04                                             
+Smith                     10-MAR-05                                             
+Doran                     15-DEC-05                                             
+Sewall                    03-NOV-06                                             
+Vishney                   11-NOV-05                                             
+Greene                    19-MAR-07                                             
+Marvins                   24-JAN-08                                             
+Lee                       23-FEB-08                                             
+Ande                      24-MAR-08                                             
+
+LAST_NAME                 HIRE_DATE                                             
+------------------------- ---------                                             
+Banda                     21-APR-08                                             
+Ozer                      11-MAR-05                                             
+Bloom                     23-MAR-06                                             
+Fox                       24-JAN-06                                             
+Smith                     23-FEB-07                                             
+Bates                     24-MAR-07                                             
+Kumar                     21-APR-08                                             
+Abel                      11-MAY-04                                             
+Hutton                    19-MAR-05                                             
+Taylor                    24-MAR-06                                             
+Livingston                23-APR-06                                             
+
+LAST_NAME                 HIRE_DATE                                             
+------------------------- ---------                                             
+Johnson                   04-JAN-08                                             
+
+34 rows selected.
+
+SQL> spool off;

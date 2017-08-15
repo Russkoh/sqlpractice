@@ -1,0 +1,15 @@
+SQL> insert into my_employee values(1, 'Patel', 'Ralph', 'rpatel', 895);
+
+1 row created.
+
+SQL> select * from my_employee;
+
+        ID LAST_NAME                 FIRST_NAME                                 
+---------- ------------------------- -------------------------                  
+USER_ID                       SALARY                                            
+------------------------- ----------                                            
+         1 Patel                     Ralph                                      
+rpatel                           895                                            
+                                                                                
+
+SQL> spool off;

@@ -1,0 +1,19 @@
+SQL> create view dept50 as select employee_id empno, last_name employee, department_id deptno form employees where deparrtment_id = 50 with check option;
+create view dept50 as select employee_id empno, last_name employee, department_id deptno form employees where deparrtment_id = 50 with check option
+                                                                                         *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> create view dept50 as select employee_id empno, last_name employee, department_id deptno from employees where deparrtment_id = 50 with check option;
+create view dept50 as select employee_id empno, last_name employee, department_id deptno from employees where deparrtment_id = 50 with check option
+                                                                                                              *
+ERROR at line 1:
+ORA-00904: "DEPARRTMENT_ID": invalid identifier 
+
+
+SQL> create view dept50 as select employee_id empno, last_name employee, department_id deptno from employees where department_id = 50 with check option;
+
+View created.
+
+SQL> spool off;

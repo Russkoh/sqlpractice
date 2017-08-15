@@ -1,0 +1,53 @@
+SQL> describe departments;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DEPARTMENT_ID                             NOT NULL NUMBER(4)
+ DEPARTMENT_NAME                           NOT NULL VARCHAR2(30)
+ MANAGER_ID                                         NUMBER(6)
+ LOCATION_ID                                        NUMBER(4)
+
+SQL> insert into dept select department_id, department_name from departments;
+
+27 rows created.
+
+SQL> select * from dept;
+
+        ID NAME                                                                 
+---------- -------------------------                                            
+        10 Administration                                                       
+        20 Marketing                                                            
+        30 Purchasing                                                           
+        40 Human Resources                                                      
+        50 Shipping                                                             
+        60 IT                                                                   
+        70 Public Relations                                                     
+        80 Sales                                                                
+        90 Executive                                                            
+       100 Finance                                                              
+       110 Accounting                                                           
+
+        ID NAME                                                                 
+---------- -------------------------                                            
+       120 Treasury                                                             
+       130 Corporate Tax                                                        
+       140 Control And Credit                                                   
+       150 Shareholder Services                                                 
+       160 Benefits                                                             
+       170 Manufacturing                                                        
+       180 Construction                                                         
+       190 Contracting                                                          
+       200 Operations                                                           
+       210 IT Support                                                           
+       220 NOC                                                                  
+
+        ID NAME                                                                 
+---------- -------------------------                                            
+       230 IT Helpdesk                                                          
+       240 Government Sales                                                     
+       250 Retail Sales                                                         
+       260 Recruiting                                                           
+       270 Payroll                                                              
+
+27 rows selected.
+
+SQL> spool off;
